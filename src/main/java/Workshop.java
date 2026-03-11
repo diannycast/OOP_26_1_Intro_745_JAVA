@@ -263,10 +263,17 @@ public class Workshop {
 
     // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
-        // TODO: Implementar el método para convertir una cadena a mayúsculas.
-        // Ejemplo: Si cadena = "hello", el resultado debería ser "HELLO".
-        return "";
+    String resultado = "";
+    for (int i = 0; i < cadena.length(); i++) {
+        char c = cadena.charAt(i);
+        if (c >= 'a' && c <= 'z') {
+            resultado += (char) (c - 32);
+        } else {
+            resultado += c;
+        }
     }
+    return resultado;
+}
 
     // Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
