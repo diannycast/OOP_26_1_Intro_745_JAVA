@@ -277,10 +277,17 @@ public class Workshop {
 
     // Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
-        // TODO: Implementar el método para convertir una cadena a minúsculas.
-        // Ejemplo: Si cadena = "HELLO", el resultado debería ser "hello".
-        return "";
+    String resultado = ""; 
+    for (int i = 0; i < cadena.length(); i++) {
+    char c = cadena.charAt(i);
+    if (c >= 'A' && c <= 'Z') {
+       resultado += (char) (c + 32);
+        } else {
+            resultado += c;
+        }
     }
+    return resultado;
+}
 
     // Método que reemplaza una subcadena en una cadena por otra subcadena
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
