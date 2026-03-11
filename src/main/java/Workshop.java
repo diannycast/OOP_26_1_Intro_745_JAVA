@@ -7,23 +7,40 @@ public class Workshop {
 
     // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
-        // TODO: Implementar el método para retornar la suma de dos números enteros.
-        // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
-        return a+b;
+        return a + b}
+	intResultado = sumarDosNumeros (a, b)
+	System.out.println.("la suma es: " + resultado)
+	
     }
 
     // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
+
        if ( a>= b && a>= c) return a; 
 	if (b >= c) return b; 
 	return c;
+
+        // TODO: Implementar el método para retornar el mayor de los tres números enteros.
+       if (a >= b && a >= c) return a;
+    	if (b >= c) return b;
+   	 return c;
+
+	
+
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
+
         int [] tabla = new int [limite];
 	for (int numero = 0; D < limite; D++){
 	tabla [D] = numero * (D+1);
+
+        int [] resultado = new int [limite];
+		for (int D = 0, i < limite; D++)
+	{ resultado [D] = numero (D+1);
+        return resultado;
+
     }
  	return tabla;
 
