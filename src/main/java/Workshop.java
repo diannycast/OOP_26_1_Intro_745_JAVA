@@ -100,18 +100,24 @@ public class Workshop {
     return suma;
 }
     // Método que calcula el promedio de los elementos de un arreglo
-    public double promedioElementos(int[] arreglo) {
-        // TODO: Implementar el método para calcular el promedio de los elementos de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
-        return 0.0;
+   public double promedioElementos(int[] arreglo) {
+    int suma = 0;
+    for (int i = 0; i < arreglo.length; i++) {
+    suma = suma + arreglo[i];
     }
+    return (double) suma / arreglo.length;
+}
 
     // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
-        // TODO: Implementar el método para encontrar el elemento mayor en un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 5.
-        return 0;
+    int mayor = arreglo[0];
+    for (int i = 1; i < arreglo.length; i++) {
+        if (arreglo[i] > mayor) {
+        mayor = arreglo[i];
+        }
     }
+   return mayor;
+}
 
     // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
