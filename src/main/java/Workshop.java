@@ -46,28 +46,50 @@ public class Workshop {
 
     // Método que calcula el factorial de un número entero
     public static long factorial(int n) {
- 	// Lanzar IllegalArgumentException si n es negativo.
-	if (n < 0) throw new IllegalArgumentException ("n no puede ser negativo")
-	long resultado = 1; 
-	for (int D = 2; D <= n; D++)*resultado=D; 
-       
-        return resultado;
+
+    // Lanzar IllegalArgumentException si n es negativo
+    if (n < 0) {
+        throw new IllegalArgumentException("n no puede ser negativo");
     }
+    long resultado = 1;
+    for (int i = 2; i <= n; i++) {
+        resultado = resultado * i;
+    }
+    return resultado;
+}
+
 
     // Método que verifica si un número es primo
-    public boolean esPrimo(int numero) {
-        // TODO: Implementar el método para verificar si un número es primo.
-        // Ejemplo: Si numero = 7, el resultado debería ser true.
+	public boolean esPrimo(int numero) {
+    if (numero <= 1) {
         return false;
     }
+    for (int i = 2; i < numero; i++) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
     // Método que genera una serie de Fibonacci
     public int[] serieFibonacci(int n) {
-        // TODO: Implementar el método para generar la serie de Fibonacci hasta el número n.
-        // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
-        // Lanzar IllegalArgumentException si n es negativo.
-        return new int[0];
+
+    if (n < 0) {
+        throw new IllegalArgumentException("n no puede ser negativo");
     }
+    int[] fibonacci = new int[n];
+    if (n > 0) {
+    fibonacci[0] = 0;
+    }
+    if (n > 1) {
+    fibonacci[1] = 1;
+    }
+    for (int i = 2; i < n; i++) {
+    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+    return fibonacci;
+}
 
     // Método que suma todos los elementos de un arreglo
     public int sumaElementos(int[] arreglo) {
