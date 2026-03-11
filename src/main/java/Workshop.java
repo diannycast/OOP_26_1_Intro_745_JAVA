@@ -229,11 +229,17 @@ public class Workshop {
 
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
-        // TODO: Implementar el método para verificar si una cadena es un palíndromo.
-        // Ejemplo: Si cadena = "madam", el resultado debería ser true.
-        return false;
+    int izquierda = 0;
+    int derecha = cadena.length() - 1;
+    while (izquierda < derecha) {
+        if (cadena.charAt(izquierda) != cadena.charAt(derecha)) {
+         return false;
+        }
+        izquierda++;
+        derecha--;
     }
-
+    return true;
+}	
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
         // TODO: Implementar el método para contar el número de palabras en una cadena.
