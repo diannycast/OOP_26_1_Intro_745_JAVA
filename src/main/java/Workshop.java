@@ -3,7 +3,7 @@ import java.util.List;
 public class Workshop {
 
     public static void main(String[] args) {
-        // Espacio para pruebas manuales
+        // Método principal
     }
 
     // --- MÉTODOS MATEMÁTICOS ---
@@ -45,11 +45,11 @@ public class Workshop {
 
     public int[] serieFibonacci(int n) {
         if (n < 0) throw new IllegalArgumentException("n no puede ser negativo");
-        int[] fib = new int[n];
+        int[] fib = new int[n]; // Aquí se llama 'fib'
         if (n > 0) fib[0] = 0;
         if (n > 1) fib[1] = 1;
         for (int i = 2; i < n; i++) {
-            fib[i] = fib[i - 1] + fibonacci[i - 2];
+            fib[i] = fib[i - 1] + fib[i - 2]; // Corregido para usar 'fib'
         }
         return fib;
     }
@@ -68,6 +68,7 @@ public class Workshop {
     }
 
     public int encontrarElementoMayor(int[] arreglo) {
+        if (arreglo.length == 0) return 0;
         int mayor = arreglo[0];
         for (int i = 1; i < arreglo.length; i++) {
             if (arreglo[i] > mayor) mayor = arreglo[i];
@@ -76,6 +77,7 @@ public class Workshop {
     }
 
     public int encontrarElementoMenor(int[] arreglo) {
+        if (arreglo.length == 0) return 0;
         int menor = arreglo[0];
         for (int i = 1; i < arreglo.length; i++) {
             if (arreglo[i] < menor) menor = arreglo[i];
@@ -139,7 +141,7 @@ public class Workshop {
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         int n = arreglo.length;
         if (n == 0) return arreglo;
-        posiciones = posiciones % n;
+        posiciones = (posiciones % n + n) % n; // Maneja posiciones negativas
         int[] res = new int[n];
         for (int i = 0; i < n; i++) {
             res[i] = arreglo[(i + posiciones) % n];
@@ -150,19 +152,20 @@ public class Workshop {
     // --- MÉTODOS DE CADENAS ---
 
     public int contarCaracteres(String cadena) {
-        return cadena.length();
+        return (cadena == null) ? 0 : cadena.length();
     }
 
     public String invertirCadena(String cadena) {
-        StringBuilder sb = new StringBuilder(cadena);
-        return sb.reverse().toString();
+        if (cadena == null) return null;
+        return new StringBuilder(cadena).reverse().toString();
     }
 
     public boolean esPalindromo(String cadena) {
+        if (cadena == null) return false;
         String limpia = cadena.replaceAll("\\s+", "").toLowerCase();
         int i = 0, j = limpia.length() - 1;
         while (i < j) {
-            if (limpia.charAt(i++) != limpia.charAt(j--)) return false; // Corregido 'limpia'
+            if (limpia.charAt(i++) != limpia.charAt(j--)) return false;
         }
         return true;
     }
@@ -173,18 +176,20 @@ public class Workshop {
     }
 
     public String convertirAMayusculas(String cadena) {
-        return cadena.toUpperCase();
+        return (cadena == null) ? null : cadena.toUpperCase();
     }
 
     public String convertirAMinusculas(String cadena) {
-        return cadena.toLowerCase();
+        return (cadena == null) ? null : cadena.toLowerCase();
     }
 
     public String reemplazarSubcadena(String cadena, String vieja, String nueva) {
+        if (cadena == null) return null;
         return cadena.replace(vieja, nueva);
     }
 
     public int buscarSubcadena(String cadena, String subcadena) {
+        if (cadena == null || subcadena == null) return -1;
         return cadena.indexOf(subcadena);
     }
 
@@ -210,7 +215,7 @@ public class Workshop {
     }
 
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return "Empate"; 
+        return "Resultado"; 
     }
 
     public String pptls2(String[] game) {
